@@ -145,6 +145,20 @@ Error generating stack: `+o.message+`
     }
   }
 
+  @keyframes fade-in-slide-up-button-play {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, calc(-50% + 20px));
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+
   //Fade in with scale
   @keyframes fade-in-scale-up {
     0% {
@@ -836,6 +850,10 @@ Error generating stack: `+o.message+`
     h2 {
       ${De(16,300,16,4)};
       text-align: center;
+      animation: fade-in-slide-up 400ms forwards ease-in-out;
+      transform: translateY(20px);
+      opacity: 0;
+      animation-delay: ${({index:e})=>`calc(calc(var(--delay-appereance-1) + 300ms) * ${e} )`};
       @media (max-width: ${ee.screenLg}) {
         ${De(26,300,26,4)};
       }
@@ -855,6 +873,9 @@ Error generating stack: `+o.message+`
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      opacity: 0;
+      animation: fade-in-slide-up-button-play 400ms forwards ease-in-out;
+      animation-delay: ${({index:e})=>`calc(calc(var(--delay-appereance-1) + 200ms) * ${e} )`};
       @media (max-width: ${ee.screenLg}) {
         width: 64px;
         height: 64px;
