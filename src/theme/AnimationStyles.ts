@@ -73,6 +73,20 @@ const AnimationStyles = css`
     }
   }
 
+  @keyframes fade-in-slide-up-button-play {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, calc(-50% + 20px));
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+
   //Fade in with scale
   @keyframes fade-in-scale-up {
     0% {

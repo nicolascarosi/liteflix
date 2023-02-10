@@ -39,6 +39,11 @@ const StyledVideoItem = styled.div<IStyledVideoItem>`
     h2 {
       ${fontSize(16, 300, 16, 4)};
       text-align: center;
+      animation: fade-in-slide-up 400ms forwards ease-in-out;
+      transform: translateY(20px);
+      opacity: 0;
+      animation-delay: ${({ index }) =>
+        `calc(calc(var(--delay-appereance-1) + 300ms) * ${index} )`};
       @media (max-width: ${breakpoints.screenLg}) {
         ${fontSize(26, 300, 26, 4)};
       }
@@ -58,6 +63,10 @@ const StyledVideoItem = styled.div<IStyledVideoItem>`
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      opacity: 0;
+      animation: fade-in-slide-up-button-play 400ms forwards ease-in-out;
+      animation-delay: ${({ index }) =>
+        `calc(calc(var(--delay-appereance-1) + 200ms) * ${index} )`};
       @media (max-width: ${breakpoints.screenLg}) {
         width: 64px;
         height: 64px;
